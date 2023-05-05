@@ -11,8 +11,12 @@ namespace Topoceros.Components
         #endregion Constructors
 
         #region Properties
-        private Brep Brep { get; set; } = (Brep)null;
+        protected override System.Drawing.Bitmap Icon { get => null; }
+
+        public override Guid ComponentGuid { get => new Guid("C1C78C99-53DC-49A3-B08E-26B53CF2B454"); }
         #endregion Properties
+
+        #region Methods
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
             pManager.AddBrepParameter("Brep", "B", "Base Brep", GH_ParamAccess.item);
@@ -37,20 +41,6 @@ namespace Topoceros.Components
                 DA.SetDataList(2, this.Brep.GetFaces());
             }
         }
-
-        protected override System.Drawing.Bitmap Icon
-        {
-            get
-            {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
-                return null;
-            }
-        }
-
-        public override Guid ComponentGuid
-        {
-            get { return new Guid("C1C78C99-53DC-49A3-B08E-26B53CF2B454"); }
-        }
+        #endregion Methods
     }
 }
