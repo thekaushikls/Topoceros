@@ -13,7 +13,7 @@ namespace Topoceros.Components
         #endregion Constructors
 
         #region Properties
-        protected override System.Drawing.Bitmap Icon { get => null; }
+        protected override System.Drawing.Bitmap Icon { get => Properties.Resources.Icons_Component_GetGeometry_24x24; }
 
         public override Guid ComponentGuid { get => new Guid("335139CC-14F8-4980-BAB0-58EC74AB9F3B"); }
 

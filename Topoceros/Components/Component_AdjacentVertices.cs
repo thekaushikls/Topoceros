@@ -11,7 +11,7 @@ namespace Topoceros.Components
         #endregion Constructors
 
         #region Properties
-        protected override System.Drawing.Bitmap Icon { get => null; }
+        protected override System.Drawing.Bitmap Icon { get => Properties.Resources.Icons_Component_AdjacentVertices_24x24; }
 
         public override Guid ComponentGuid { get => new Guid("0538FC15-FB06-4D88-8564-D886039BE58A"); }
         #endregion Properties

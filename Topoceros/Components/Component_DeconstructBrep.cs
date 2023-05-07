@@ -11,7 +11,9 @@ namespace Topoceros.Components
         #endregion Constructors
 
         #region Properties
-        protected override System.Drawing.Bitmap Icon { get => null; }
+        
+        public Brep Brep { get; set; }
+        protected override System.Drawing.Bitmap Icon { get => Properties.Resources.Icons_Component_DeconstructBrep_24x24; }
 
         public override Guid ComponentGuid { get => new Guid("C1C78C99-53DC-49A3-B08E-26B53CF2B454"); }
         #endregion Properties
