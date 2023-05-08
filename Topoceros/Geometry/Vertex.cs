@@ -37,6 +37,13 @@ namespace Topoceros
                     vertexIndices.Add(vertex.VertexIndex);
                     yield return new Vertex(vertex);
                 }
+
+                vertex = edge.BrepEdge.EndVertex;
+                if (vertexIndices.Contains(vertex.VertexIndex) == false)
+                {
+                    vertexIndices.Add(vertex.VertexIndex);
+                    yield return new Vertex(vertex);
+                }
             }
         }
 
