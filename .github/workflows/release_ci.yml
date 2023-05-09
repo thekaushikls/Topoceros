@@ -90,7 +90,7 @@ jobs:
           uses: TheDoctor0/zip-release@0.7.1
           with: 
             type: 'zip'
-            directory: src/bin/Release/
+            directory: Topoceros/bin/Release/
             filename: Topoceros-v${{ needs.pre-build.outputs.version }}.zip
       
         # Automatically deploy a new release based on project version number
@@ -99,7 +99,7 @@ jobs:
           with:
             name: Topoceros-v${{ needs.pre-build.outputs.version }} # Version number extracted in pre-build
             tag: v${{ needs.pre-build.outputs.version }}
-            artifacts: src/bin/Release/Topoceros-v${{ needs.pre-build.outputs.version }}.zip
+            artifacts: Topoceros/bin/Release/Topoceros-v${{ needs.pre-build.outputs.version }}.zip
             makeLatest: true
             allowUpdates: false
             token: ${{ secrets.GITHUB_TOKEN }}
