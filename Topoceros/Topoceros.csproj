@@ -49,7 +49,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="Copy &quot;$(TargetPath)&quot; &quot;%25AppData%25\Grasshopper\Libraries\Topoceros.gha&quot;" />
+    <Exec Command="if $(Configuration) == Debug ( Copy &quot;$(TargetPath)&quot; &quot;%25AppData%25\Grasshopper\Libraries\Topoceros.gha&quot; )" />
   </Target>
     
 </Project>
