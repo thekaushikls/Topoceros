@@ -1,6 +1,10 @@
 name: release_ci
 
 on:
+  push: # Runs on push to main branch
+    branches:
+      - "main"
+
   workflow_dispatch: # Runs when manually triggered
 
 
