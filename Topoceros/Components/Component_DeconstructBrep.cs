@@ -11,8 +11,9 @@ namespace Topoceros.Components
         #endregion Constructors
 
         #region Properties
-        
-        public Brep Brep { get; set; }
+
+        public Brep Brep { get; set; } = null;
+
         protected override System.Drawing.Bitmap Icon { get => Properties.Resources.Icons_Component_DeconstructBrep_24x24; }
 
         public override Guid ComponentGuid { get => new Guid("C1C78C99-53DC-49A3-B08E-26B53CF2B454"); }
@@ -37,10 +38,9 @@ namespace Topoceros.Components
             if (DA.GetData<Brep>(0, ref brep))
             {
                 this.Brep = brep.DuplicateBrep();
-
-                DA.SetDataList(0, this.Brep.GetVertices());
-                DA.SetDataList(1, this.Brep.GetEdges());
-                DA.SetDataList(2, this.Brep.GetFaces());
+                DA.SetDataList(0, this.Brep.GetVertices_Goo());
+                DA.SetDataList(1, this.Brep.GetEdges_Goo());
+                DA.SetDataList(2, this.Brep.GetFaces_Goo());
             }
         }
         #endregion Methods

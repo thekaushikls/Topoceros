@@ -1,8 +1,6 @@
 ﻿using Grasshopper.Kernel;
-using Grasshopper.Kernel.Types;
-using Rhino.Geometry;
 using System;
-using Topoceros.Geometry;
+using Topoceros.Goo;
 
 namespace Topoceros.Components
 {
@@ -32,10 +30,10 @@ namespace Topoceros.Components
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            IGeometry element = (IGeometry)null;
-            if (DA.GetData<IGeometry>(0, ref element))
+            ITC_GeometricGoo element = null;
+            if (DA.GetData(0, ref element))
             {
-                DA.SetData(0, element.Geometry);
+                DA.SetData(0, element.Element.Geometry);
             }
         }
         #endregion Methods

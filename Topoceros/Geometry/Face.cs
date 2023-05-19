@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Rhino.Geometry;
+using System.Collections.Generic;
 using Topoceros.Geometry;
-using Rhino.Geometry;
 
 namespace Topoceros
 {
-    public class Face : IGeometry, ITraversable
+    public class Face : ITraversable
     {
         #region Constructors
         public Face(BrepFace face)
@@ -24,6 +24,12 @@ namespace Topoceros
         #endregion Properties
 
         #region Methods
+
+        internal Mesh GetFastRenderMesh()
+        {
+            return Mesh.CreateFromSurface(this.BrepFace, MeshingParameters.FastRenderMesh);
+        }
+
         public IEnumerable<Vertex> GetAdjacentVertices()
         {
             HashSet<int> vertexIndices = new HashSet<int>();
@@ -54,6 +60,11 @@ namespace Topoceros
             {
                 yield return new Face(this.Brep.Faces[faceIndex]);
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{this.GetType()} [{this.Index}]";
         }
         #endregion Methods
     }

@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Rhino.Geometry;
+using System.Collections.Generic;
 using Topoceros.Geometry;
-using Rhino.Geometry;
 
 namespace Topoceros
 {
-    public class Edge : IGeometry, ITraversable
+    public class Edge : ITraversable
     {
         #region Constructors
         public Edge(BrepEdge edge)
@@ -41,7 +41,7 @@ namespace Topoceros
                     {
                         edgeIndices.Add(edge.BrepEdge.EdgeIndex);
                         yield return edge;
-                    }   
+                    }
                 }
             }
         }
@@ -52,6 +52,11 @@ namespace Topoceros
             {
                 yield return new Face(this.Brep.Faces[faceIndex]);
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{this.GetType()} [{this.Index}]";
         }
         #endregion Methods
     }

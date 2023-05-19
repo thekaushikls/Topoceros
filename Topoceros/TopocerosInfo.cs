@@ -20,6 +20,6 @@ namespace Topoceros
         public override string AuthorName => "Kaushik LS";
 
         //Return a string representing your preferred contact details.
-        public override string AuthorContact => "";
+        public override string AuthorContact => @"https://www.linkedin.com/in/thekaushikls";
     }
 }

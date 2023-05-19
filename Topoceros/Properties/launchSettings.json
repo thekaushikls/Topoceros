@@ -2,7 +2,7 @@
   "profiles": {
     "Topoceros": {
       "commandName": "Project",
-      "commandLineArgs": "/nosplash /runscript=\"_-Grasshopper Banner Disable Window Load Window Show _Enter\""
+      "commandLineArgs": "/nosplash /runscript=\"_-Grasshopper Banner Disable Window Load Window Show _Enter Open\""
     }
   }
 }

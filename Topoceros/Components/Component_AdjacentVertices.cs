@@ -1,6 +1,6 @@
 ﻿using Grasshopper.Kernel;
-using Topoceros.Geometry;
 using System;
+using Topoceros.Goo;
 
 namespace Topoceros.Components
 {
@@ -29,8 +29,8 @@ namespace Topoceros.Components
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            ITraversable element = (ITraversable)null;
-            if (DA.GetData<ITraversable>(0, ref element))
+            ITC_GeometricGoo element = null;
+            if (DA.GetData(0, ref element))
             {
                 DA.SetDataList(0, element.GetAdjacentVertices());
             }

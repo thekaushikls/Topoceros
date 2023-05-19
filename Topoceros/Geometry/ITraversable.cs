@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Rhino.Geometry;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Topoceros.Geometry
 {
     public interface ITraversable
     {
+        int Index { get; }
+
+        Brep Brep { get; }
+
+        GeometryBase Geometry { get; }
+
         IEnumerable<Vertex> GetAdjacentVertices();
 
         IEnumerable<Edge> GetAdjacentEdges();
