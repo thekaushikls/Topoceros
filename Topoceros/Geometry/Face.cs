@@ -19,16 +19,12 @@ namespace Topoceros
 
         public Brep Brep { get => BrepFace.Brep; }
 
-        public GeometryBase Geometry { get => this.BrepFace.DuplicateSurface(); }
+        public GeometryBase Geometry { get => this.BrepFace.DuplicateFace(true); }
         public BrepFace BrepFace { get; internal set; }
         #endregion Properties
 
         #region Methods
-
-        internal Mesh GetFastRenderMesh()
-        {
-            return Mesh.CreateFromSurface(this.BrepFace, MeshingParameters.FastRenderMesh);
-        }
+        internal Brep DisplayGeometry() => this.Geometry as Brep;
 
         public IEnumerable<Vertex> GetAdjacentVertices()
         {
@@ -48,6 +44,7 @@ namespace Topoceros
 
         public IEnumerable<Edge> GetAdjacentEdges()
         {
+            // Add Adjacent Edges away from the face. Not the boundary
             foreach (int edgeIndex in this.BrepFace.AdjacentEdges())
             {
                 yield return new Edge(this.Brep.Edges[edgeIndex]);

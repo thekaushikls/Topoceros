@@ -20,7 +20,7 @@ namespace Topoceros.Goo
 
         public override void DrawViewportWires(GH_PreviewWireArgs args)
         {
-            args.Pipeline.DrawCurve(this.Value.BrepEdge, args.Color, Grasshopper.CentralSettings.PreviewSelectionThickening);
+            args.Pipeline.DrawCurve(this.Value.BrepEdge, args.Color, Grasshopper.CentralSettings.PreviewSelectionThickening + 1);
         }
         #endregion Methods
     }

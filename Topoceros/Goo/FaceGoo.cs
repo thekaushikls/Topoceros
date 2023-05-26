@@ -15,12 +15,12 @@ namespace Topoceros.Goo
         #region Methods
         public override void DrawViewportMeshes(GH_PreviewMeshArgs args)
         {
-            args.Pipeline.DrawMeshShaded(this.Value.GetFastRenderMesh(), args.Material);
+            args.Pipeline.DrawBrepShaded(this.Value.DisplayGeometry(), args.Material);
         }
 
         public override void DrawViewportWires(GH_PreviewWireArgs args)
         {
-            args.Pipeline.DrawMeshWires(this.Value.GetFastRenderMesh(), args.Color);
+            args.Pipeline.DrawBrepWires(this.Value.DisplayGeometry(), args.Color, 0);
         }
         #endregion Methods
     }
