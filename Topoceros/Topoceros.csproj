@@ -2,7 +2,7 @@
     
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <Version>0.0.1-alpha</Version>
+    <Version>0.0.1-beta</Version>
     <Title>Topoceros</Title>
     <Description>Description of Topoceros</Description>
     <TargetExt>.gha</TargetExt>

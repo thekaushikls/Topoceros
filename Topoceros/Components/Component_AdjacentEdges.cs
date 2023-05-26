@@ -32,7 +32,7 @@ namespace Topoceros.Components
             ITC_GeometricGoo element = null;
             if (DA.GetData(0, ref element))
             {
-                DA.SetData(0, element.GetAdjacentEdges());
+                DA.SetDataList(0, element.GetAdjacentEdges());
             }
         }
         #endregion Methods
