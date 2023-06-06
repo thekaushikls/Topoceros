@@ -4,7 +4,7 @@
     <TargetFramework>net48</TargetFramework>
     <Version>0.0.1</Version>
     <Title>Topoceros</Title>
-    <Description>Description of Topoceros</Description>
+    <Description>Brep Extension components for Traversal &amp; Topology Analysis</Description>
     <TargetExt>.gha</TargetExt>
     <PackageOutputPath>$(OutputPath)</PackageOutputPath>
     <BaseOutputPath>bin\</BaseOutputPath>
