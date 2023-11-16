@@ -9,7 +9,16 @@ namespace Topoceros
         #region Constructor
         public Vertex(BrepVertex brepvertex)
         {
-            BrepVertex = brepvertex;
+            this.BrepVertex = brepvertex;
+            this.Weight = 1;
+            this.Value = new Dictionary<string, List<object>>();
+        }
+
+        public Vertex(BrepVertex brepvertex, double weight)
+        {
+            this.BrepVertex = brepvertex;
+            this.Weight = weight;
+            this.Value = new Dictionary<string, List<object>>();
         }
         #endregion Constructor
 
@@ -20,6 +29,10 @@ namespace Topoceros
         public Brep Brep { get => BrepVertex.Brep; }
 
         public GeometryBase Geometry { get => this.BrepVertex.Duplicate(); }
+
+        public double Weight { get; set; }
+
+        public Dictionary<string, List<object>> Value { get; set; } 
 
         public BrepVertex BrepVertex { get; internal set; }
         #endregion Properties
@@ -49,7 +62,6 @@ namespace Topoceros
 
         public IEnumerable<Vertex> GetAdjacentVertices(int level)
         {
-            HashSet<Vertex> result = new HashSet<Vertex>();
             HashSet<Point3d> visited = new HashSet<Point3d>();
             Queue<Vertex> queue = new Queue<Vertex>();
             int currentLevel = 0;
@@ -86,7 +98,6 @@ namespace Topoceros
             }
 
             yield break;
-            //return result.ToList();
         }
 
         public IEnumerable<Edge> GetAdjacentEdges()

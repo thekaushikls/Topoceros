@@ -9,16 +9,29 @@ namespace Topoceros
         #region Constructors
         public Edge(BrepEdge edge)
         {
-            BrepEdge = edge;
+            this.BrepEdge = edge;
+            this.Weight = 1;
+            this.Value = new Dictionary<string, List<object>>();
+        }
+
+        public Edge(BrepEdge edge, double weight)
+        {
+            this.BrepEdge = edge;
+            this.Weight = weight;
+            this.Value = new Dictionary<string, List<object>>();
         }
         #endregion Constructor
 
         #region Properties
         public int Index { get => this.BrepEdge.EdgeIndex; }
 
-        public Brep Brep { get => BrepEdge.Brep; }
+        public Brep Brep { get => this.BrepEdge.Brep; }
 
         public GeometryBase Geometry { get => this.BrepEdge.Duplicate(); }
+
+        public double Weight { get; set; }
+
+        public Dictionary<string, List<object>> Value { get; set; }
 
         public BrepEdge BrepEdge { get; internal set; }
         #endregion Properties

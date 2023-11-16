@@ -11,6 +11,10 @@ namespace Topoceros.Geometry
 
         GeometryBase Geometry { get; }
 
+        double Weight { get; set; }
+
+        Dictionary<string, List<object>> Value { get; set; }
+
         IEnumerable<Vertex> GetAdjacentVertices();
 
         IEnumerable<Edge> GetAdjacentEdges();
